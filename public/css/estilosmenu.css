@@ -1,0 +1,137 @@
+        body {
+          background: #ece5da;
+          font-family: "Raleway", sans-serif;
+          color: ivory;
+          font-size: 20px;
+        }
+
+        p {
+          background: #ece5da;
+          font-family: "Raleway", sans-serif;
+          color: #145A32;
+          font-size: 30px;
+          text-align:center;
+        }
+
+        nav {
+          margin: auto;
+          margin-top: 40px;
+          position: relative;
+          width: clamp(320px, 50vw ,100%);
+        }
+        /**Color de la barra del menu */
+        nav h2 {
+          font-size: 1.5rem;
+          border-radius: 4px;          
+          position: relative;
+          background: #127D67;
+          height: 40px;
+          text-transform: uppercase;
+          margin-bottom: 0;
+          color: inherit;
+          font-weight: 200;
+          display: flex;
+          flex: 1;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 4px 4px 20px -2px rgba(0, 0, 0, 0.35);
+          transition: all 0.4s;
+        }
+
+        nav:hover h2 {
+          transform: translateY(-2px);
+          box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.35);
+          transition: all 0.4s;
+        }
+
+        #toggle {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+          opacity: 0;
+          cursor: pointer;
+          height: 40px;
+          color: #ffffff;
+        }
+
+        h2::before{
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: inherit;
+          aspect-ratio: 1;
+          background: #14001b; /*color de la flecha del menu*/
+          display: flex;
+          align-items: center;
+          padding-right: 1rem;
+          content: "";
+          clip-path: polygon(50% 25%, 20% 80%, 80% 80%);
+          transform: rotate(180deg) scale(0.75);
+        }
+
+        #toggle:not(:checked) ~ h2::before {
+          transform: rotate(0deg) scale(0.75);
+        }
+
+        #toggle:focus ~ h2{
+          background: #960a05;
+          transition: background 0.45s;
+        }
+
+        #toggle:checked ~ ul {
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        #toggle:not(:checked) ~ ul {
+          opacity: 1;
+          transition: opacity 0.3s ease-in-out;
+        }
+        /*Se aplica el color de fondo*/
+        nav ul {
+          padding-left: 0;
+          padding-top: 1rem;
+          margin-top: 0;
+          background: #ece5da;
+          list-style: none;
+          overflow: hidden;
+          text-align: right;
+          text-align: center;
+          transition: all 0.4s ease-out;
+          width: 100%;
+          position: absolute;
+        }
+        nav ul li {
+          border-radius: 2px;
+          position: relative;
+          display: inline-block;
+          line-height: 1.5;
+          width: 100%;
+          margin: 0 0 0.25rem 0;
+          background: #65EC5E;
+          transition: background 3s;
+          box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.35);
+        }
+
+        nav ul li:hover,
+        nav ul li a:focus {
+          background: #2CAF2A;
+          transition: background 0.45s;
+        }
+
+        nav ul a {
+          display: block;
+          color: inherit;
+          
+          font-weight: 200;
+          text-decoration: none;
+        }
+
+        /**Aplica el color a la letra del menú */
+        .container {
+          max-width: 55ch;
+          margin: auto;
+          color: #d1e7f5;
+        }
